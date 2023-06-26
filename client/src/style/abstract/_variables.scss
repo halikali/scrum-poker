@@ -1,0 +1,22 @@
+// Screen sizes
+$screen-sizes: (
+  'sm': 576px,
+  'md': 768px,
+  'lg': 1024px,
+  'xl': 1470px,
+);
+
+// colors
+$color: (
+  'black': #000,
+  'white': #fff,
+  'primary-light': #e85d75,
+  'primary-dark': #c76d7e,
+  'secondary-dark': #9f8082,
+  'secondary-light': #ad9b9a,
+  'tertiary-dark': #8d918b,
+);
+
+$font: (
+  'primary': 'Roboto',
+);

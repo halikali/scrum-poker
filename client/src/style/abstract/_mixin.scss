@@ -1,0 +1,56 @@
+@mixin media-breakpoint($size) {
+  @if $size == 'mobile-and-down' {
+    @media (max-width: (map-get($screen-sizes, 'sm') - 1)) {
+      @content;
+    }
+  }
+
+  @if $size == 'tablet-and-down' {
+    @media (max-width: (map-get($screen-sizes, 'md') - 1)) {
+      @content;
+    }
+  }
+
+  @if $size == 'only-tablet' {
+    @media (min-width: (map-get($screen-sizes,'md'))) and (max-width: (map-get($screen-sizes, 'lg') - 1)) {
+      @content;
+    }
+  }
+
+  @if $size == 'only-desktop' {
+    @media (min-width: map-get($screen-sizes, 'lg')) and (max-width: (map-get($screen-sizes, 'xl') - 1)) {
+      @content;
+    }
+  }
+
+  @if $size == 'mobile-and-up' {
+    @media (min-width: map-get($screen-sizes, 'sm')) {
+      @content;
+    }
+  }
+
+  @if $size == 'tablet-and-up' {
+    @media (min-width: map-get($screen-sizes, 'md')) {
+      @content;
+    }
+  }
+
+  @if $size == 'desktop-and-up' {
+    @media (min-width: map-get($screen-sizes, 'lg')) {
+      @content;
+    }
+  }
+
+  @if $size == 'large-desktop-and-up' {
+    @media (min-width: map-get($screen-sizes, 'xl')) {
+      @content;
+    }
+  }
+}
+
+@mixin line-clamp($lines) {
+  display: -webkit-box;
+  -webkit-line-clamp: $lines;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
