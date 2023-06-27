@@ -1,0 +1,22 @@
+@use '../../../style/abstract/variables' as variables;
+
+.button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding: 1rem 0;
+  font-size: 1.8rem;
+  font-weight: 700;
+  background-color: map-get(variables.$color, 'primary-light');
+  border: 0.1rem solid map-get(variables.$color, 'primary-dark');
+  color: map-get(variables.$color, 'white');
+  border-radius: 0.5rem;
+  transition: background-color 0.2s ease-in;
+  min-height: 4.8rem;
+
+  &:hover {
+    background-color: map-get(variables.$color, 'primary-dark');
+    transition: background-color 0.2s ease-in;
+  }
+}
