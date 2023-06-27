@@ -5,6 +5,7 @@ import { RouteTypes } from '../types/routeTypes'
 enum RouteEnum {
   other = '*',
   login = '/login',
+  game = '/game/:gameId',
 }
 
 const routes: RouteTypes = [
@@ -12,6 +13,11 @@ const routes: RouteTypes = [
     path: RouteEnum.login,
     name: 'loginPage',
     page: lazy(() => import('../pages/Login')),
+  },
+  {
+    path: RouteEnum.game,
+    name: 'gamePage',
+    page: lazy(() => import('../pages/Game')),
   },
   {
     path: RouteEnum.other,

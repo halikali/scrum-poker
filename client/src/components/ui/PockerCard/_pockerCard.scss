@@ -1,0 +1,69 @@
+@use '../../../style/abstract/variables' as variables;
+
+.pocker-card {
+  position: relative;
+  width: 5rem;
+  height: 8rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.6rem;
+  color: map-get(variables.$color, 'primary-dark');
+  border: 0.2rem solid map-get(variables.$color, 'primary-dark');
+  margin-right: 1rem;
+  font-weight: 700;
+  border-radius: 0.5rem;
+  transition: all 0.1s ease-in-out;
+  cursor: pointer;
+
+  &:hover {
+    background-color: lighten(map-get(variables.$color, 'primary-dark'), 20%);
+    color: map-get(variables.$color, 'white');
+    transition: all 0.1s ease-in-out;
+  }
+
+  .owner {
+    position: absolute;
+    bottom: -2.2rem;
+    left: 50%;
+    transform: translateX(-50%);
+    color: map-get(variables.$color, 'primary-dark');
+  }
+
+  &.selected {
+    background-color: map-get(variables.$color, 'primary-dark');
+    color: map-get(variables.$color, 'white');
+    transition: all 0.1s ease-in-out;
+    top: -1rem;
+  }
+
+  &.back-side {
+    background: map-get(variables.$color, 'primary-light');
+    background: linear-gradient(
+        45deg,
+        map-get(variables.$color, 'primary-light') 12%,
+        transparent 0,
+        transparent 88%,
+        map-get(variables.$color, 'primary-light') 0
+      ),
+      linear-gradient(
+        135deg,
+        transparent 37%,
+        map-get(variables.$color, 'white') 0,
+        map-get(variables.$color, 'white') 63%,
+        transparent 0
+      ),
+      linear-gradient(
+        45deg,
+        transparent 37%,
+        map-get(variables.$color, 'primary-light') 0,
+        map-get(variables.$color, 'primary-light') 63%,
+        transparent 0
+      ),
+      map-get(variables.$color, 'white');
+    background-size: 1rem 1rem;
+    border: 1px solid hsla(204, 6%, 68%, 0.4);
+    box-shadow: 0 2px 4px hsla(204, 6%, 68%, 0.4);
+    cursor: default;
+  }
+}

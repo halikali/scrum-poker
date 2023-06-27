@@ -1,0 +1,41 @@
+.game-page {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 5rem;
+  height: 100%;
+
+  .cards-wrapper {
+    width: 100%;
+    display: flex;
+    overflow: hidden;
+    overflow-x: scroll;
+    scrollbar-width: 0;
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+
+    * {
+      flex-shrink: 0;
+    }
+  }
+
+  .selected-card-area {
+    display: flex;
+    flex-wrap: wrap;
+    row-gap: 3rem;
+  }
+
+  .invite-area {
+    position: absolute;
+    right: 0;
+    top: 2rem;
+
+    .button {
+      padding: 1rem 2rem;
+    }
+  }
+}
