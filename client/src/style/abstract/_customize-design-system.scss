@@ -1,0 +1,16 @@
+$grid-breakpoints: (
+  xs: 0,
+  sm: map-get($screen-sizes, "sm" ),
+  md: map-get($screen-sizes, "md" ),
+  lg: map-get($screen-sizes, "lg" ),
+  xl: map-get($screen-sizes, "xl" ),
+  xxl: map-get($screen-sizes, "xxl" ),
+);
+
+$container-max-widths: (
+  sm: 540px,
+  md: 720px,
+  lg: 960px,
+  xl: 1220px,
+  xxl: 1520px,
+);

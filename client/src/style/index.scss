@@ -1,8 +1,12 @@
-@import 'bootstrap/scss/bootstrap';
-
+// import abstract folder
 @import './abstract/variables';
 @import './abstract/mixin';
 
+// import bootstrap and customize it
+@import './abstract/customize-design-system';
+@import 'bootstrap/scss/bootstrap';
+
+// import base folder
 @import './base/reset';
 @import './base/global';
 @import './base/typopgraphy';
