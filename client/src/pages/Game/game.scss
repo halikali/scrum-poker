@@ -12,9 +12,9 @@
   .cards-wrapper {
     width: 100%;
     display: flex;
-    overflow: hidden;
     overflow-x: scroll;
     scrollbar-width: 0;
+    padding: 1rem 0;
 
     &::-webkit-scrollbar {
       display: none;
@@ -42,6 +42,12 @@
 
     .button {
       padding: 1rem 2rem;
+    }
+  }
+
+  .select-name-popup {
+    .input {
+      margin: 2.4rem 0;
     }
   }
 }
