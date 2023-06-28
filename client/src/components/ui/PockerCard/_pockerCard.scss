@@ -28,6 +28,8 @@
     left: 50%;
     transform: translateX(-50%);
     color: map-get(variables.$color, 'primary-dark');
+    background: rgba(map-get(variables.$color, 'white'), 0.7);
+    padding: 0.2rem 1rem;
   }
 
   &.selected {
