@@ -50,7 +50,7 @@ const Game = () => {
       </div>
 
       <PokerDesk>
-        {selectedCard.point == '' && <p>Pick your cards!</p>}
+        {selectedCard.point === '' && <p>Pick your cards!</p>}
 
         {selectedCard.point !== '' && !isCardOpen && (
           <Button
