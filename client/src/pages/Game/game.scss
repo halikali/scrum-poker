@@ -35,7 +35,10 @@
     row-gap: 3rem;
   }
 
-  .invite-area {
+  .button-area {
+    display: flex;
+    justify-content: flex-end;
+    gap: 0.5rem;
     position: absolute;
     right: 0;
     top: 2rem;
