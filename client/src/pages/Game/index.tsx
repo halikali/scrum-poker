@@ -64,8 +64,8 @@ const Game = () => {
       setVotedCards([])
     })
 
-    socket.on('revealCard', (data) => {
-      if (data === 'revealCard') setIsCardOpen(true)
+    socket.on('revealCard', () => {
+      setIsCardOpen(true)
     })
   }, [socket])
 
@@ -92,7 +92,7 @@ const Game = () => {
   }
 
   const revealCards = () => {
-    socket.emit('revealCard', 'revealCard')
+    socket.emit('revealCard')
   }
 
   const inviteFriends = () => {
