@@ -1,11 +1,18 @@
 import React, { createContext, useEffect } from 'react'
 import { io, Socket } from 'socket.io-client'
 
+import appSettings from '../../appSettings.json'
+import { IAppSettings } from '../types/commonTypes'
+
 interface ISocketContextProps {
   children: React.ReactNode
 }
 
-const socket: Socket = io('http://localhost:5000')
+const appSettingsTyped: IAppSettings = appSettings
+
+const mode = import.meta.env.MODE
+
+const socket: Socket = io(appSettingsTyped[mode].socketUrl)
 
 export const SocketContext = createContext<Socket>(socket)
 
