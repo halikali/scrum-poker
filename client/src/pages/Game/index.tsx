@@ -34,6 +34,8 @@ const Game = () => {
   const [isInvitePopupActive, setIsInvitePopupActive] = useState<boolean>(false)
   const [votedCards, setVotedCards] = useState<any[]>([])
   const inputRef = useRef<HTMLInputElement>()
+  const [isCardSelectionActive, setIsCardSelectionActive] =
+    useState<boolean>(true)
 
   const gameRoom = location.pathname.split('game/')[1]
 
@@ -84,15 +86,18 @@ const Game = () => {
 
   const finishGame = () => {
     socket.emit('endGame')
+    setIsCardSelectionActive(true)
   }
 
   const sendCard = (point: string | number) => {
+    if (!isCardSelectionActive) return
     setSelectedCard({ ...selectedCard, point })
     socket.emit('sendCard', { ...selectedCard, point, owner, room: gameRoom })
   }
 
   const revealCards = () => {
     socket.emit('revealCard')
+    setIsCardSelectionActive(false)
   }
 
   const inviteFriends = () => {
