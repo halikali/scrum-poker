@@ -11,11 +11,8 @@ interface ISocketContextProps {
 const appSettingsTyped: IAppSettings = appSettings
 
 const mode = import.meta.env.MODE
-console.log("🚀 ~ file: SocketContext.tsx:14 ~ mode:", mode)
-
 
 const socket: Socket = io(appSettingsTyped[mode].socketUrl)
-console.log("🚀 ~ file: SocketContext.tsx:18 ~ appSettingsTyped[mode].socketUrl:", appSettingsTyped[mode].socketUrl)
 
 export const SocketContext = createContext<Socket>(socket)
 
