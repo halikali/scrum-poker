@@ -174,7 +174,7 @@ const Game = () => {
 
       <PokerDesk>{calculateDeskContent()}</PokerDesk>
 
-      {(selectedCard.point !== '' || votedCards.length > 0) && (
+      {votedCards.length > 0 && (
         <div className="selected-card-area">
           {votedCards.map((item, index) => (
             <PockerCard
