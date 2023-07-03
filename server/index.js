@@ -12,7 +12,7 @@ let cards = [];
 
 const io = new Server(server, {
   cors: {
-    origin: "http://localhost:5173",
+    origin: ["http://localhost:5173", "https://spiffy-duckanoo-c47e50.netlify.app"],
     methods: ["GET", "POST"],
   },
 });
