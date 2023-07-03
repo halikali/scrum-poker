@@ -1,19 +1,24 @@
-import React, { createContext } from 'react'
+import React, { createContext, useEffect } from 'react'
 import { io, Socket } from 'socket.io-client'
 
 interface ISocketContextProps {
   children: React.ReactNode
 }
 
-// Socket.IO bağlantısını oluşturun
 const socket: Socket = io('http://localhost:5000')
 
-// Socket Context oluşturun
 export const SocketContext = createContext<Socket>(socket)
 
-// Socket Provider bileşeni
 export const SocketProvider = ({ children }: ISocketContextProps) => {
-  // Socket bağlantısını paylaşmak için bir kontekst sağlayın
+  useEffect(() => {
+    socket.disconnect()
+    socket.connect()
+
+    return () => {
+      socket.disconnect()
+    }
+  }, [])
+
   return (
     <SocketContext.Provider value={socket}>{children}</SocketContext.Provider>
   )

@@ -1,5 +1,5 @@
 import { Suspense, lazy } from 'react'
-import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import { Routes, Route, HashRouter } from 'react-router-dom'
 import { RouteTypes } from '../types/routeTypes'
 
 enum RouteEnum {
@@ -28,7 +28,7 @@ const routes: RouteTypes = [
 
 const RouteSettings = () => {
   return (
-    <BrowserRouter>
+    <HashRouter>
       <Routes>
         {routes.map((item) => (
           <Route
@@ -42,7 +42,7 @@ const RouteSettings = () => {
           />
         ))}
       </Routes>
-    </BrowserRouter>
+    </HashRouter>
   )
 }
 
