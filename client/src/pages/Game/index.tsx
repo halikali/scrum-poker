@@ -88,7 +88,7 @@ const Game = () => {
 
   const sendCard = (point: string | number) => {
     setSelectedCard({ ...selectedCard, point })
-    socket.emit('sendCard', { ...selectedCard, point, owner })
+    socket.emit('sendCard', { ...selectedCard, point, owner, room: gameRoom })
   }
 
   const revealCards = () => {

@@ -12,7 +12,10 @@ let cards = [];
 
 const io = new Server(server, {
   cors: {
-    origin: ["http://localhost:5173", "https://spiffy-duckanoo-c47e50.netlify.app"],
+    origin: [
+      "http://localhost:5173",
+      "https://spiffy-duckanoo-c47e50.netlify.app",
+    ],
     methods: ["GET", "POST"],
   },
 });
@@ -39,7 +42,10 @@ io.on("connection", (socket) => {
       cards.push({ ...card, ownerID: socket.id });
     }
 
-    io.to(user.room).emit("sendedCards", cards);
+    io.to(user.room).emit(
+      "sendedCards",
+      cards.filter((item) => item.room === card.room)
+    );
   });
 
   socket.on("endGame", (data) => {
