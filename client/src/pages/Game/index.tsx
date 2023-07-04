@@ -64,10 +64,12 @@ const Game = () => {
       setIsCardOpen(false)
       setSelectedCard({ ...selectedCard, point: '' })
       setVotedCards([])
+      setIsCardSelectionActive(true)
     })
 
     socket.on('revealCard', () => {
       setIsCardOpen(true)
+      setIsCardSelectionActive(false)
     })
   }, [socket])
 
@@ -86,7 +88,6 @@ const Game = () => {
 
   const finishGame = () => {
     socket.emit('endGame')
-    setIsCardSelectionActive(true)
   }
 
   const sendCard = (point: string | number) => {
@@ -97,7 +98,6 @@ const Game = () => {
 
   const revealCards = () => {
     socket.emit('revealCard')
-    setIsCardSelectionActive(false)
   }
 
   const inviteFriends = () => {
